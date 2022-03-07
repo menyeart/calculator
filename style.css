@@ -1,0 +1,96 @@
+.calc {
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    width: 530px;
+    background-color: grey;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+
+.wording {
+
+    justify-content: space-between;
+    display: flex;
+    width: 450px;
+    margin: 0 auto;
+
+  
+}
+
+#mathio {
+    font-family:sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+
+#mathio2 {
+   align-self: center;
+   font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+#screen {
+    display: flex;
+    height: 200px;
+    width: 450px;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 0px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 50px;
+    border-style: inset;
+    border-width: 2px;
+    border-color: black;
+
+
+}
+
+.buttonsa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+    padding-bottom: 30px;
+
+}
+
+.buttonsb {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    justify-content:space-between;
+    
+
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    margin: 3px;
+}
+
+#btn1 {
+    background-color: orangered;
+    color: black;
+    
+}
+
+#btn2 {
+    background-color: black;
+    color: white;
+}
+
+#btn5, #btn6, #btn7, #btn8, #btn9, #btn10, #btn11, #btn12, #btn12, #btn13, #btn14, #btn15, #btn16, #btn17, #btn18, #btn19, #btn20 {
+    background-color:rgb(255, 255, 255);
+    margin-top: 10px;
+    border-radius: 5px;
+    
+
+}
