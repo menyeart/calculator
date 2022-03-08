@@ -15,30 +15,31 @@
             <p id="mathio">MATHIO</p>
             <p id="mathio2">Personal Electronic Calculator</p>
         </div>
-        <div id="screen"></div>
+        <div id="screen" >
+        </div>
         <div class="buttonsa">
             <button id="btn1" onclick = "startOver()">C</button>
             <button id="btn2" onclick = "back()">BACK</button>
-            <button id="btn3" onclick = "operandChoice(sqrt)">SQRT</button>
+            <button id="btn3" onclick = "operandChoice2('sqrt')">SQRT</button>
             <button id="btn4" onclick="add">%</button>
         </div>
         <div class="buttonsb">
             <button id="btn5" onclick = "screenPop(7)">7</button>
             <button id="btn6" onclick = "screenPop(8)">8</button>
             <button id="btn7" onclick = "screenPop(9)">9</button>
-            <button id="btn8" onclick = "operandChoice('/')">/</button>
+            <button id="btn8" onclick = "operandChoice2('/')">/</button>
             <button id="btn9" onclick = "screenPop(4)">4</button>
             <button id="btn10" onclick = "screenPop(5)">5</button>
             <button id="btn11" onclick = "screenPop(6)">6</button>
-            <button id="btn12" onclick = "operandChoice('x')">X</button>
+            <button id="btn12" onclick = "operandChoice2('x')">X</button>
             <button id="btn13" onclick = "screenPop(1)">1</button>
             <button id="btn14" onclick = "screenPop(2)">2</button>
             <button id="btn15" onclick = "screenPop(3)">3</button>
-            <button id="btn16" onclick = "operandChoice('-')">-</button>
+            <button id="btn16" onclick = "operandChoice2('-')">-</button>
             <button id="btn17" onclick = "screenPop(0)">0</button>
             <button id="btn18" onclick = "decimal()">.</button>
-            <button id="btn19" onclick = "operate2(currentOp)">=</button>
-            <button id="btn20" onclick = "operandChoice('+')">+</button>
+            <button id="btn19" onclick = "operate2(currentOperator)">=</button>
+            <button id="btn20" onclick = "operandChoice2('+')">+</button>
 
         </div> 
     </div>

@@ -1,3 +1,5 @@
+/*
+
 const add = function(a, b) {
 	return a + b;
 };
@@ -38,17 +40,62 @@ const factorial = function(initNum) {
 	
 };
 
+const operate = function (currentOperator) {
+
+  switch (currentOperator) {
+   case '+':
+     return document.getElementById("screen").innerHTML = `${Number(valueNumber) + Number(displayNumber)}`;
+     break;
+   case '-':
+     return document.getElementById("screen").innerHTML = `${Number(valueNumber) - Number(displayNumber)}`;
+     break;
+   case 'x':
+     return document.getElementById("screen").innerHTML = `${Number(valueNumber) * Number(displayNumber)}`;
+     break;
+   case '/':
+     return document.getElementById("screen").innerHTML = `${Number(valueNumber) / Number(displayNumber)}`;
+     break;
+   }
+ 
+ }
+
+ const operandChoice = function (key) {
+  currentOperator = key;
+  valueNumber = displayNumber;
+  firstNumber = "0";
+  displayNumber = "";
+  return document.getElementById("screen").innerHTML = `${currentOperator}`;
+
+}
+
+
+const operandChoice2 = function (key) {
+  if (currentOperator == 0) {
+   currentOperator = key;
+   valueNumber = displayNumber;
+   displayNumber = "";
+   return document.getElementById("screen").innerHTML = `${currentOperator}`;
+  } else {
+      valueNumber = operate2(currentOperator);
+      currentOperator = key;
+      displayNumber = "";
+   }
+}
+
+
+
+
+*/
 
 //Calculator
 
 
-let currentNumber = "";
-let currentOp = "";
+let currentOperator = "";
 let displayNumber = "";
+let valueNumber = "";
 
 
 const screenPop = function(key) {
-  let currentNumber = key;
   displayNumber += key;
   document.getElementById("screen").innerHTML = `${displayNumber}`;
 }
@@ -59,44 +106,68 @@ const decimal = function() {
 }
 
 
-const operandChoice = function (key) {
-    currentOp = key;
-    firstOperand = displayNumber;
-    currentNumber = "0";
+const operandChoice2 = function (key) {
+  if (currentOperator == 0 && valueNumber == 0) {
+   currentOperator = key;
+   valueNumber = displayNumber;
+   displayNumber = "";
+   return document.getElementById("screen").innerHTML = `${currentOperator}`;
+  } else if (currentOperator == 0 && valueNumber != 0) {
+    currentOperator = key;
     displayNumber = "";
-    return document.getElementById("screen").innerHTML = `${currentOp}`;
-
- }
-
-const operate = function (currentOp) {
-
- switch (currentOp) {
-  case '+':
-    return document.getElementById("screen").innerHTML = `${Number(firstOperand) + Number(displayNumber)}`;
-    break;
-  case '-':
-    return document.getElementById("screen").innerHTML = `${Number(firstOperand) - Number(displayNumber)}`;
-    break;
-  case 'x':
-    return document.getElementById("screen").innerHTML = `${Number(firstOperand) * Number(displayNumber)}`;
-    break;
-  case '/':
-    return document.getElementById("screen").innerHTML = `${Number(firstOperand) / Number(displayNumber)}`;
-    break;
-  }
-
+    return document.getElementById("screen").innerHTML = `${currentOperator}`;
+  } else {
+      valueNumber = operate2(currentOperator);
+      currentOperator = key;
+   }
 }
 
+const operate2 = function (currentOperator) {
+
+  switch (currentOperator) {
+   case '+':
+    valueNumber = Number(valueNumber) + Number(displayNumber);
+    document.getElementById("screen").innerHTML = `${valueNumber}`;
+    opReset();
+    return valueNumber;
+    break;
+   case '-':
+    valueNumber = Number(valueNumber) - Number(displayNumber);
+    document.getElementById("screen").innerHTML = `${valueNumber}`;
+    opReset();
+    return valueNumber;
+    break;
+   case 'x':
+    valueNumber = Number(valueNumber) * Number(displayNumber);
+    document.getElementById("screen").innerHTML = `${valueNumber}`;
+    opReset();
+    return valueNumber;
+    break;
+   case '/':
+    valueNumber = Number(valueNumber) / Number(displayNumber);
+    document.getElementById("screen").innerHTML = `${valueNumber}`;
+    opReset();
+    return valueNumber;
+    break;
+   case 'sqrt':
+     valueNumber = Math.sqrt(Number(valueNumber));
+     document.getElementById("screen").innerHTML = `${valueNumber}`;
+     opReset();
+     return valueNumber;
+     break;
+   }
+  
+ }
+
 const opReset = function () {
-  currentOp = null;
-  currentNumber = displayNumber;
+  currentOperator = "";
   displayNumber = "";
 }
  
 const startOver = function () {
-  currentOp = null;
-  currentNumber = "0";
+  currentOperator = "";
   displayNumber = "";
+  valueNumber = "";
   return document.getElementById("screen").innerHTML = `${displayNumber}`;
 }
 
@@ -104,40 +175,6 @@ const back = function () {
   displayNumber = displayNumber.slice(0,displayNumber.length-1);
   document.getElementById("screen").innerHTML = `${displayNumber}`;
 }
-
-
-//trying to create a new operate function to reset variables after use
-
-const operate2 = function (currentOp) {
-
-  switch (currentOp) {
-   case '+':
-    displayNumber = `${Number(firstOperand) + Number(displayNumber)}`;
-    currentNumber = "";
-    currentOp = "";
-    return document.getElementById("screen").innerHTML = `${displayNumber}`;
-    break;
-   case '-':
-    displayNumber = `${Number(firstOperand) - Number(displayNumber)}`;
-    currentNumber = "";
-    currentOp = "";
-    return document.getElementById("screen").innerHTML = `${displayNumber}`;
-    break;
-   case 'x':
-    displayNumber = `${Number(firstOperand) * Number(displayNumber)}`;
-    currentNumber = "";
-    currentOp = "";
-    return document.getElementById("screen").innerHTML = `${displayNumber}`;
-    break;
-   case '/':
-    displayNumber = `${Number(firstOperand) / Number(displayNumber)}`;
-    currentNumber = "";
-    currentOp = "";
-    return document.getElementById("screen").innerHTML = `${displayNumber}`;
-    break;
-   }
- 
- }
 
 
 
