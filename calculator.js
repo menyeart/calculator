@@ -92,8 +92,10 @@ const operate = function (currentOperator) {
     valueNumber = Number(valueNumber) * Number(displayNumber);
     break;
    case '/':
-    if (displayNumber == 0) {
+    if (displayNumber == "0") {
       valueNumber = "!!ERROR!!";
+      document.getElementById("screen").innerHTML = `${valueNumber}`;
+      return clearOperands();
     } else {
     valueNumber = Number(valueNumber) / Number(displayNumber);
     }
@@ -106,7 +108,7 @@ const operate = function (currentOperator) {
   valueNumber = Math.round(valueNumber * 1000) / 1000;
 
   if (valueNumber.toString().length > 9) {
-    valueNumber = "!Error!!";
+    valueNumber = "!!Error!!";
     document.getElementById("screen").innerHTML = `${valueNumber}`;
     clearOperands();
     return valueNumber;
